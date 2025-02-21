@@ -1,6 +1,6 @@
-import random 
-from typing import Literal
 from typing_extensions import TypedDict
+import random
+from typing import Literal
 from langgraph.graph import StateGraph, START, END
 
 # State
@@ -47,3 +47,8 @@ builder.add_edge("node_3", END)
 
 # Compile graph
 graph = builder.compile()
+
+if __name__ == "__main__":
+    # Run the graph
+    result = graph.invoke({"graph_state": "Hi, this is Lance."})
+    print("\nFinal result:", result)
